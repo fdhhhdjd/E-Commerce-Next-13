@@ -1,8 +1,10 @@
-import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+import "./globals.css";
+import { TRPCProvider } from "./providers/trpcProvider";
+import UserContextProvider from "./providers/UserProvider";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
@@ -20,9 +22,13 @@ export default function RootLayout({
     <html lang="en" className={inter.className}>
       <head />
       <body suppressHydrationWarning={true} className="bg-gray-100">
-        <Header />
-        {children}
-        <Footer />
+        <UserContextProvider user={""} isAdmin={false}>
+          <TRPCProvider>
+            <Header />
+            {children}
+            <Footer />
+          </TRPCProvider>
+        </UserContextProvider>
       </body>
     </html>
   );
