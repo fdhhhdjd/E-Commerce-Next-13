@@ -9,7 +9,7 @@
 
 ## Project: E-Commerce-Next-13
 
-## Team Word: Liên hệ công việc https://profile-forme.cf
+## Team Word: Liên hệ công việc https://profile-forme.com
 
 ## 1. Nguyen Tien Tai( MainTain 🚩).
 
@@ -23,6 +23,6 @@
 
 ## Chi Nhánh: NGAN HANG TMCP AN BINH (ABBANK).
 
-## SUPORT CONTACT: [https://profile-forme.cf](https://profile-forme.cf)
+## SUPPORT CONTACT: [https://profile-forme.com](https://profile-forme.com)
 
 ## Thank You <3.
