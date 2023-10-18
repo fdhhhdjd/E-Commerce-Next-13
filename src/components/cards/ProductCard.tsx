@@ -3,8 +3,8 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { FullProductClient } from "../../types/types";
-import { displayNumbers } from "@/app/helpers/numbers";
-import { generateRandomNumber } from "@/app/helpers/randoms";
+import { displayNumbers } from "@/src/helpers/numbers";
+import { generateRandomNumber } from "@/src/helpers/randoms";
 
 const ProductCard = ({
   id,

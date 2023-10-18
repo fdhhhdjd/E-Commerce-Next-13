@@ -1,6 +1,6 @@
 "use client";
 
-import { PRODUCTS_PER_PAGE } from "@/app/utils/constants";
+import { PRODUCTS_PER_PAGE } from "@/src/utils/constants";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { useState } from "react";

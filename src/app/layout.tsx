@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Toaster } from "react-hot-toast";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
 import "./globals.css";
-import UserContextProvider from "./providers/UserProvider";
-import { QueryClientContextProvider } from "./providers/trpcProvider";
 import Head from "./head";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import UserContextProvider from "../providers/UserProvider";
+import { QueryClientContextProvider } from "../providers/trpcProvider";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 

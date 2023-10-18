@@ -7,7 +7,11 @@ export type UserSession =
   | undefined;
 
 export interface FullProduct extends Product {
-  category: Category;
+  id: string;
+  name: string;
+  image: string;
+  description: string;
+  price: number;
   _count: {
     orderItems: number;
   };
