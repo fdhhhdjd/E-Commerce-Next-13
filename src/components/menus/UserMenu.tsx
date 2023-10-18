@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import React from "react";
+import React from 'react';
 
 const UserMenu = () => {
-  return <div>UserMenu</div>;
+	return <div>UserMenu</div>;
 };
 
 export default UserMenu;

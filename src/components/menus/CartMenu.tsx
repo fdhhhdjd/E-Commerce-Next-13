@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 
 const CheckoutBtn = () => {
-  return <div>CheckoutBtn</div>;
+	return <div>CheckoutBtn</div>;
 };
 
 export default CheckoutBtn;

@@ -1,11 +1,11 @@
-import Hero from "@/src/components/heros/Hero";
+import Hero from '@/src/components/heros/Hero';
 
 const HomePage = () => {
-  return (
-    <div>
-      <Hero />
-    </div>
-  );
+	return (
+		<div>
+			<Hero />
+		</div>
+	);
 };
 
 export default HomePage;

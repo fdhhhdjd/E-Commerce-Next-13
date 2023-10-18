@@ -1,3 +1,118 @@
 {
-  "extends": "next/core-web-vitals"
+	"env": {
+		"browser": true,
+		"es2021": true
+	},
+	"extends": [
+		"plugin:react/recommended",
+		"plugin:prettier/recommended",
+		"plugin:react-hooks/recommended",
+		"plugin:@typescript-eslint/recommended"
+	],
+	"parser": "@typescript-eslint/parser",
+
+	"parserOptions": {
+		"ecmaFeatures": {
+			"tsx": true,
+			"ts": true
+		},
+		"ecmaVersion": 2021,
+		"sourceType": "module",
+		"project": "./tsconfig.json"
+	},
+	"plugins": ["react", "prettier", "react-hooks", "import", "detox", "@typescript-eslint"],
+	"rules": {
+		"react/react-in-jsx-scope": "off",
+		"@typescript-eslint/no-unused-vars": ["error"],
+		"react/jsx-filename-extension": [
+			"warn",
+			{
+				"extensions": [".ts", ".tsx"]
+			}
+		],
+		"prettier/prettier": ["error"],
+		"quotes": ["error", "single"],
+		"semi": ["error", "always"],
+		"react/prop-types": "off",
+		"react/display-name": "off",
+		"react/jsx-key": "off",
+		"react/no-unknown-property": "off",
+		"react-hooks/exhaustive-deps": "off",
+		"import/order": [
+			"error",
+			{
+				"groups": ["builtin", "external", "internal", ["sibling", "parent"], "index", "unknown"],
+				"newlines-between": "always",
+				"alphabetize": {
+					"order": "asc",
+					"caseInsensitive": true
+				}
+			}
+		],
+		"no-console": [
+			"error",
+			{
+				"allow": ["info", "warn", "error", "time", "timeEnd"]
+			}
+		],
+		// Use const when possible.
+		"prefer-const": "warn",
+		"max-len": ["error", 200],
+		"array-bracket-newline": "warn",
+		"consistent-return": "warn",
+		"eqeqeq": "error",
+		"no-fallthrough": "off",
+		"no-unused-expressions": "warn",
+		"react-hooks/rules-of-hooks": "error",
+		"no-unused-vars": [
+			"error",
+			{
+				"varsIgnorePattern": "^_",
+				"argsIgnorePattern": "^_"
+			}
+		],
+		"react/jsx-no-bind": [
+			"error",
+			{
+				"allowArrowFunctions": true,
+				"allowBind": false,
+				"ignoreRefs": true
+			}
+		],
+		"@typescript-eslint/naming-convention": [
+			"error",
+			{
+				"selector": "variable",
+				"format": ["camelCase", "UPPER_CASE", "PascalCase"],
+				"leadingUnderscore": "allow"
+			},
+			{
+				"selector": "variable",
+				"types": ["boolean"],
+				"format": ["PascalCase"],
+				"prefix": ["is", "should", "has", "can", "did", "will"]
+			},
+			{
+				"selector": "parameter",
+				"format": ["camelCase"],
+				"leadingUnderscore": "allow"
+			},
+			{
+				"selector": "memberLike",
+				"modifiers": ["private"],
+				"format": ["camelCase"],
+				"leadingUnderscore": "allow"
+			},
+			{
+				"selector": "typeLike",
+				"format": ["PascalCase"]
+			}
+		]
+	},
+	"settings": {
+		"react": {
+			"version": "detect"
+		},
+		"import/extensions": [".ts", ".tsx"]
+	}
 }
