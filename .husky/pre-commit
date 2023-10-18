@@ -1,0 +1,13 @@
+#!/usr/bin/env sh
+# Stop if error
+set -e
+
+. "$(dirname -- "$0")/_/husky.sh"
+
+npm run lint-staged
+
+echo "---- Oh my good Prefetch 🔥 ----"
+
+
+
+

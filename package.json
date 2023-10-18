@@ -7,7 +7,27 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "server": "json-server --watch ./database/db.json --port 5000"
+    "server": "json-server --watch ./database/db.json --port 5000",
+    "prettier": "prettier --write",
+    "prepare": "husky install",
+    "pre-commit": "echo \"[Husky] pre-commit\"",
+    "lint-staged": "lint-staged"
+  },
+  "lint-staged": {
+    "src/**/*.{ts,tsx}": [
+      "npm run lint",
+      "npm run prettier"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npx lint-staged"
+    }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
   },
   "dependencies": {
     "@material-tailwind/react": "^1.2.4",
@@ -35,6 +55,11 @@
     "typescript": "5.2.2"
   },
   "devDependencies": {
-    "@types/lodash": "^4.14.199"
+    "@commitlint/cli": "^17.6.5",
+    "@commitlint/config-conventional": "^17.6.5",
+    "@types/lodash": "^4.14.199",
+    "prettier": "^3.0.3",
+    "lint-staged": "^14.0.1",
+    "husky": "^8.0.0"
   }
 }
