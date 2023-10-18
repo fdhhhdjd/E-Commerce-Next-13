@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { Toaster } from "react-hot-toast";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import "./globals.css";
-import { TRPCProvider } from "./providers/trpcProvider";
 import UserContextProvider from "./providers/UserProvider";
+import { QueryClientContextProvider } from "./providers/trpcProvider";
+import Head from "./head";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
@@ -20,14 +22,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={inter.className}>
-      <head />
+      <Head />
       <body suppressHydrationWarning={true} className="bg-gray-100">
         <UserContextProvider user={""} isAdmin={false}>
-          <TRPCProvider>
+          <QueryClientContextProvider>
             <Header />
             {children}
+            <Toaster position="top-center" />
             <Footer />
-          </TRPCProvider>
+          </QueryClientContextProvider>
         </UserContextProvider>
       </body>
     </html>
