@@ -9,6 +9,12 @@
 
 ## Project: E-Commerce-Next-13
 
+![image](https://github.com/fdhhhdjd/E-Commerce-Next-13/assets/63393170/21fc9c1c-4dcd-4c0a-9c1a-95c917d78922)
+
+![image](https://github.com/fdhhhdjd/E-Commerce-Next-13/assets/63393170/b3a9d277-ddc7-45e7-a9df-348f3d34ea7b)
+
+
+
 ## Team Word: Liên hệ công việc https://profile-forme.com
 
 ## 1. Nguyen Tien Tai( MainTain 🚩).
