@@ -15,7 +15,7 @@ const Footer = () => {
 						<Link
 							className="underline"
 							target="_blank"
-							href="https://github.com/amirfakhrullah/ecommerce-next13beta"
+							href="https://github.com/fdhhhdjd/E-Commerce-Next-13"
 						>
 							here.
 						</Link>

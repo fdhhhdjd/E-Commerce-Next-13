@@ -1,7 +1,6 @@
 'use client';
 
 import { useQuery } from '@tanstack/react-query';
-import axios from 'axios';
 import { useState } from 'react';
 
 import PaginationButtons from '../buttons/PaginationButtons';
@@ -9,6 +8,7 @@ import Loader from '../loaders/Loader';
 import NotFoundText from '../NotFoundText';
 import ProductGrids from '../ProductGrids';
 
+import { fetchProducts } from '@/src/api/products/GET';
 import { PRODUCTS_PER_PAGE } from '@/src/utils/constants';
 
 interface SearchProductSectionProp {
@@ -17,15 +17,6 @@ interface SearchProductSectionProp {
 }
 const SearchProductSection = ({ search, onClose }: SearchProductSectionProp) => {
 	const [page, setPage] = useState(1);
-
-	const fetchProducts = async (nameLike: string) => {
-		const response = await axios.get('http://localhost:5000/initProducts', {
-			params: {
-				name_like: nameLike,
-			},
-		});
-		return response.data;
-	};
 
 	const { data: products, isLoading } = useQuery(['initProducts', search], () => fetchProducts(search), {
 		onError: (err) => console.info(err),
