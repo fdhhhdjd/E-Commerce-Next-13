@@ -5,7 +5,7 @@ import { Toaster } from 'react-hot-toast';
 import Head from './head';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
-import { QueryClientContextProvider } from '../providers/trpcProvider';
+import { QueryClientContextProvider } from '../providers/QueryProvider';
 import UserContextProvider from '../providers/UserProvider';
 import '../styles/globals.css';
 
