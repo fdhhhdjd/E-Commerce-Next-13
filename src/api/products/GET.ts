@@ -11,7 +11,7 @@ const fetchProducts = async (nameLike: string) => {
 
 const fetchAllProducts = async (skip: unknown | null) => {
 	console.info(skip);
-	const response = await axios.get('http://localhost:5000/initProducts');
+	const response = await axios.get('http://localhost:5000/initProducts1');
 	return response.data;
 };
 

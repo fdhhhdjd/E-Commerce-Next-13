@@ -8,6 +8,7 @@ import ProductGrids from '../ProductGrids';
 
 import { fetchDetailCategory } from '@/src/api/categories/GET';
 import { fetchAllProducts } from '@/src/api/products/GET';
+import Error from '@/src/app/error';
 
 interface ProductSuggestionSectionProps {
 	product: FullProductClient;
@@ -20,6 +21,7 @@ const ProductSuggestionSection = ({ product }: ProductSuggestionSectionProps) =>
 		data: products,
 		isLoading,
 		isError,
+		refetch,
 	} = useQuery(['initProducts'], () => fetchAllProducts(skipProductId), {
 		onError: (err) => console.info(err),
 		refetchOnWindowFocus: false,
@@ -35,7 +37,14 @@ const ProductSuggestionSection = ({ product }: ProductSuggestionSectionProps) =>
 	}
 
 	if (isError) {
-		return <div>Error loading products</div>;
+		return (
+			<Error
+				error={{
+					message: 'Error page CategorySection',
+				}}
+				reset={() => refetch()}
+			/>
+		);
 	}
 
 	return (

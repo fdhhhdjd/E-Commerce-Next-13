@@ -21,11 +21,7 @@ interface PageProps {
 const ProductIdPage = ({ params: { productId } }: PageProps) => {
 	const queryClient = useQueryClient();
 
-	const {
-		data: product,
-		isLoading,
-		isError,
-	} = useQuery(['detailProducts'], () => fetchDetailProducts(productId), {
+	const { data: product, isLoading } = useQuery(['detailProducts'], () => fetchDetailProducts(productId), {
 		onError: (err) => console.info(err),
 		refetchOnWindowFocus: false,
 	});
@@ -42,10 +38,6 @@ const ProductIdPage = ({ params: { productId } }: PageProps) => {
 
 	if (!product) {
 		return notFound();
-	}
-
-	if (isError) {
-		return <div>Error loading products</div>;
 	}
 
 	return (

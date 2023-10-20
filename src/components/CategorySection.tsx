@@ -8,6 +8,7 @@ import { CategoryCard } from './cards/CategoryCard';
 import Loader from './loaders/Loader';
 import NotFoundText from './NotFoundText';
 import { fetchAllCategory } from '../api/categories/GET';
+import Error from '../app/error';
 
 const CategorySection = ({
 	displaySeeAllButton = true,
@@ -20,6 +21,7 @@ const CategorySection = ({
 		data: categories,
 		isLoading,
 		isError,
+		refetch,
 	} = useQuery(['initCategories'], () => fetchAllCategory(), {
 		onError: (err) => console.info(err),
 		refetchOnWindowFocus: false,
@@ -30,7 +32,14 @@ const CategorySection = ({
 	}
 
 	if (isError) {
-		return <div>Error loading products</div>;
+		return (
+			<Error
+				error={{
+					message: 'Error page CategorySection',
+				}}
+				reset={() => refetch()}
+			/>
+		);
 	}
 
 	return (

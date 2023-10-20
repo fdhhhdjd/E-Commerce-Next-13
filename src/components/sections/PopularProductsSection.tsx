@@ -8,6 +8,7 @@ import Loader from '../loaders/Loader';
 import ProductGrids from '../ProductGrids';
 
 import { fetchAllProducts } from '@/src/api/products/GET';
+import Error from '@/src/app/error';
 
 const ProductComponent = () => {
 	const skip = 1;
@@ -16,6 +17,7 @@ const ProductComponent = () => {
 		data: products,
 		isLoading,
 		isError,
+		refetch,
 	} = useQuery(['initProducts'], () => fetchAllProducts(skip), {
 		onError: (err) => console.info(err),
 		refetchOnWindowFocus: false,
@@ -26,7 +28,14 @@ const ProductComponent = () => {
 	}
 
 	if (isError) {
-		return <div>Error loading products</div>;
+		return (
+			<Error
+				error={{
+					message: 'Error page CategorySection',
+				}}
+				reset={() => refetch()}
+			/>
+		);
 	}
 	return (
 		<>
