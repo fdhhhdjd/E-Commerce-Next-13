@@ -34,16 +34,16 @@ const CategoryIdPage = (props: PageProps) => {
 		isLoading,
 		isError,
 		refetch,
-	} = useQuery(['initCategories'], () => fetchDetailCategory(categoryId), {
+	} = useQuery(['initDetailCategories'], () => fetchDetailCategory(categoryId), {
 		onError: (err) => console.info(err),
 		refetchOnWindowFocus: false,
 	});
 
 	useEffect(() => {
 		return () => {
-			queryClient.removeQueries(['initCategories']);
+			queryClient.removeQueries(['initDetailCategories']);
 		};
-	}, []);
+	}, [categoryId]);
 	if (isLoading) {
 		return <Loader />;
 	}
