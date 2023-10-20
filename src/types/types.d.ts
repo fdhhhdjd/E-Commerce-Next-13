@@ -20,5 +20,6 @@ export interface FullProduct extends Product {
 export interface FullProductClient extends Omit<FullProduct, 'sizes' | 'createdAt' | 'updatedAt'> {
 	sizes: string[];
 	createdAt: string;
+	categoryId: string;
 	updatedAt?: string | null;
 }

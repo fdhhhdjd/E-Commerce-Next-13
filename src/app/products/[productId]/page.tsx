@@ -10,6 +10,7 @@ import BackButton from '../../../components/buttons/BackButton';
 import { fetchDetailProducts } from '@/src/api/products/GET';
 import Loader from '@/src/components/loaders/Loader';
 import ProductSection from '@/src/components/sections/ProductSection';
+import ProductSuggestionSection from '@/src/components/sections/ProductSuggestionSection';
 
 interface PageProps {
 	params: {
@@ -31,7 +32,7 @@ const ProductIdPage = ({ params: { productId } }: PageProps) => {
 
 	useEffect(() => {
 		return () => {
-			queryClient.removeQueries(['detailProducts']);
+			queryClient.removeQueries(['detailProducts', 'initDetailCategory']);
 		};
 	}, []);
 
@@ -52,8 +53,7 @@ const ProductIdPage = ({ params: { productId } }: PageProps) => {
 			<BackButton />
 			<Border />
 			{product && <ProductSection product={product} />}
-
-			{/* <ProductSuggestionSection product={product} /> */}
+			<ProductSuggestionSection product={product} />
 		</>
 	);
 };
