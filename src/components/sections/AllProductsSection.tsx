@@ -7,7 +7,7 @@ import Loader from '../loaders/Loader';
 import ProductGrids from '../ProductGrids';
 
 import { fetchAllProducts } from '@/src/api/products/GET';
-import Error from '@/src/app/error';
+import ErrorPage from '@/src/app/error';
 import { PRODUCTS_PER_PAGE } from '@/src/utils/constants';
 
 interface Props {
@@ -33,7 +33,7 @@ const AllProductsSection = ({ page }: Props) => {
 
 	if (isError) {
 		return (
-			<Error
+			<ErrorPage
 				error={{
 					message: 'Error page CategorySection',
 				}}
@@ -43,17 +43,15 @@ const AllProductsSection = ({ page }: Props) => {
 	}
 
 	return (
-		<>
-			<div className="sm:mx-3 px-2 sm:py-10 py-5">
-				<h2 className="mx-auto max-w-6xl text-2xl font-black mb-4">All Available Products:</h2>
-				<ProductGrids products={products} />
-				<PaginationButtons
-					currentPage={page}
-					route="/products"
-					disableNextPage={products.length < PRODUCTS_PER_PAGE}
-				/>
-			</div>
-		</>
+		<div className="sm:mx-3 px-2 sm:py-10 py-5">
+			<h2 className="mx-auto max-w-6xl text-2xl font-black mb-4">All Available Products:</h2>
+			<ProductGrids products={products} />
+			<PaginationButtons
+				currentPage={page}
+				route="/products"
+				disableNextPage={products.length < PRODUCTS_PER_PAGE}
+			/>
+		</div>
 	);
 };
 

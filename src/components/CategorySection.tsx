@@ -8,7 +8,7 @@ import { CategoryCard } from './cards/CategoryCard';
 import Loader from './loaders/Loader';
 import NotFoundText from './NotFoundText';
 import { fetchAllCategory } from '../api/categories/GET';
-import Error from '../app/error';
+import ErrorPage from '../app/error';
 
 const CategorySection = ({
 	displaySeeAllButton = true,
@@ -33,7 +33,7 @@ const CategorySection = ({
 
 	if (isError) {
 		return (
-			<Error
+			<ErrorPage
 				error={{
 					message: 'Error page CategorySection',
 				}}

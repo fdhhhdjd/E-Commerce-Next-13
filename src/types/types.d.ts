@@ -6,7 +6,7 @@ export type UserSession =
 	  })
 	| undefined;
 
-export interface FullProduct extends Product {
+export interface FullProduct {
 	id: string;
 	name: string;
 	image: string;
@@ -17,7 +17,8 @@ export interface FullProduct extends Product {
 	};
 }
 
-export interface FullProductClient extends Omit<FullProduct, 'sizes' | 'createdAt' | 'updatedAt'> {
+export interface FullProductClient {
+	id: string;
 	sizes: string[];
 	createdAt: string;
 	categoryId: string;

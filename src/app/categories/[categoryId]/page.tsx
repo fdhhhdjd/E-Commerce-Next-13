@@ -3,7 +3,7 @@
 import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { useEffect } from 'react';
 
-import Error from '../../error';
+import ErrorPage from '../../error';
 
 import { fetchDetailCategory } from '@/src/api/categories/GET';
 import Border from '@/src/components/Border';
@@ -50,7 +50,7 @@ const CategoryIdPage = (props: PageProps) => {
 
 	if (isError) {
 		return (
-			<Error
+			<ErrorPage
 				error={{
 					message: 'Error page Category Detail',
 				}}

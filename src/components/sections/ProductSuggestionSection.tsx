@@ -8,7 +8,7 @@ import ProductGrids from '../ProductGrids';
 
 import { fetchDetailCategory } from '@/src/api/categories/GET';
 import { fetchAllProducts } from '@/src/api/products/GET';
-import Error from '@/src/app/error';
+import ErrorPage from '@/src/app/error';
 
 interface ProductSuggestionSectionProps {
 	product: FullProductClient;
@@ -38,7 +38,7 @@ const ProductSuggestionSection = ({ product }: ProductSuggestionSectionProps) =>
 
 	if (isError) {
 		return (
-			<Error
+			<ErrorPage
 				error={{
 					message: 'Error page CategorySection',
 				}}

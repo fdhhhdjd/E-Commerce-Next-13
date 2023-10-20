@@ -8,7 +8,7 @@ import Loader from '../loaders/Loader';
 import ProductGrids from '../ProductGrids';
 
 import { fetchAllProducts } from '@/src/api/products/GET';
-import Error from '@/src/app/error';
+import ErrorPage from '@/src/app/error';
 
 const ProductComponent = () => {
 	const skip = 1;
@@ -29,7 +29,7 @@ const ProductComponent = () => {
 
 	if (isError) {
 		return (
-			<Error
+			<ErrorPage
 				error={{
 					message: 'Error page CategorySection',
 				}}
