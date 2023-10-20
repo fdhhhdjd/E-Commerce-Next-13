@@ -3,7 +3,7 @@
 import { usePathname, useRouter } from 'next/navigation';
 
 import AuthButton from './buttons/AuthButton';
-import CheckoutBtn from './menus/CartMenu';
+import CheckoutBtn from './buttons/CheckoutBtn';
 import SearchSection from './SearchSection/SearchSection';
 import TitleClick from './TitleClick';
 import cn from '../helpers/cn';
