@@ -2,15 +2,19 @@
 
 import { useQuery } from '@tanstack/react-query';
 
-import Border from '../Border';
-import SeeAllButton from '../buttons/SeeAllButton';
+import PaginationButtons from '../buttons/PaginationButtons';
 import Loader from '../loaders/Loader';
 import ProductGrids from '../ProductGrids';
 
 import { fetchAllProducts } from '@/src/api/products/GET';
+import { PRODUCTS_PER_PAGE } from '@/src/utils/constants';
 
-const ProductComponent = () => {
-	const skip = 1;
+interface Props {
+	page: number;
+}
+
+const AllProductsSection = ({ page }: Props) => {
+	const skip = page > 1 ? (page - 1) * PRODUCTS_PER_PAGE : undefined;
 
 	const {
 		data: products,
@@ -28,18 +32,20 @@ const ProductComponent = () => {
 	if (isError) {
 		return <div>Error loading products</div>;
 	}
+
 	return (
 		<>
-			<Border />
 			<div className="sm:mx-3 px-2 sm:py-10 py-5">
-				<div className="mx-auto max-w-6xl flex flex-row items-center justify-between mb-4">
-					<h2 className="text-2xl font-black">Heat Sneakers 🔥</h2>
-					<SeeAllButton route="/products" />
-				</div>
+				<h2 className="mx-auto max-w-6xl text-2xl font-black mb-4">All Available Products:</h2>
 				<ProductGrids products={products} />
+				<PaginationButtons
+					currentPage={page}
+					route="/products"
+					disableNextPage={products.length < PRODUCTS_PER_PAGE}
+				/>
 			</div>
 		</>
 	);
 };
 
-export default ProductComponent;
+export default AllProductsSection;

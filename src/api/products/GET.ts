@@ -9,9 +9,15 @@ const fetchProducts = async (nameLike: string) => {
 	return response.data;
 };
 
-const fetchAllProducts = async () => {
+const fetchAllProducts = async (skip: unknown | null) => {
+	console.info(skip);
 	const response = await axios.get('http://localhost:5000/initProducts');
 	return response.data;
 };
 
-export { fetchProducts, fetchAllProducts };
+const fetchDetailProducts = async (productId: number) => {
+	const response = await axios.get(`http://localhost:5000/initProducts/${productId}`);
+	return response.data;
+};
+
+export { fetchProducts, fetchAllProducts, fetchDetailProducts };
