@@ -9,7 +9,7 @@ const Footer = () => {
 					<p className="text-[14px]">
 						Built by{' '}
 						<Link className="underline" target="_blank" href="https://twitter.com/amirfkrlh">
-							@TaiDev
+							@fdhhhdjd
 						</Link>{' '}
 						(2023). See source code{' '}
 						<Link

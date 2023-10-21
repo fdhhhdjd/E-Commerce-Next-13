@@ -2,7 +2,8 @@
 
 import React from 'react';
 
-const UserMenu = () => {
+const UserMenu = ({ user, isAdmin }: { user: string; isAdmin: boolean }) => {
+	console.info(user, isAdmin);
 	return <div>UserMenu</div>;
 };
 
