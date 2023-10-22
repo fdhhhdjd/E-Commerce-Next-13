@@ -7,6 +7,7 @@ import { usePathname, useRouter } from 'next/navigation';
 import { useState } from 'react';
 import toast from 'react-hot-toast';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
+import { BsFillTrashFill } from 'react-icons/bs';
 
 //* IMPORT
 import Button from './Button';
@@ -22,7 +23,7 @@ const CheckoutBtn = () => {
 
 	const [isLoading, setIsLoading] = useState(false);
 
-	const { cartItems, setCartItems } = useCartContext();
+	const { cartItems, setCartItems, clearStorage } = useCartContext();
 
 	const toHide = path && (['/carts', '/orders/status'].includes(path) || path.startsWith('/checkout'));
 
@@ -59,6 +60,17 @@ const CheckoutBtn = () => {
 				{cartItems.length ? (
 					<div className="flex flex-row items-center justify-between gap-1 pb-4 mb-4 border-b border-zinc-300">
 						<h3 className="text-xl font-black pl-2">Total ({cartItems.length})</h3>
+						{cartItems.length > 2 && (
+							<Button
+								onClick={() => clearStorage()}
+								isLoading={isLoading}
+								color="red"
+								className="py-2 px-6"
+							>
+								<BsFillTrashFill />
+							</Button>
+						)}
+
 						<SeeAllButton route="/carts">Checkout</SeeAllButton>
 					</div>
 				) : (

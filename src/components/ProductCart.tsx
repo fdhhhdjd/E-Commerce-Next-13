@@ -19,7 +19,7 @@ interface ProductCartProps {
 }
 
 const ProductCart = ({ product }: ProductCartProps) => {
-	const { id, name, image, sizes, quantity } = product;
+	const { id, name, image, sizes, quantity, price } = product;
 
 	const [size, setSize] = useState<string | undefined>();
 
@@ -41,6 +41,7 @@ const ProductCart = ({ product }: ProductCartProps) => {
 				name,
 				image,
 				size,
+				price,
 			},
 		]);
 		setSize(undefined);

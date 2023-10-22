@@ -11,16 +11,18 @@ import { CartItem } from '@/src/types/types';
 interface CartContextValues {
 	cartItems: CartItem[];
 	setCartItems: (cartItems: CartItem[]) => void;
+	clearStorage: () => void;
 }
 export const CartContext = React.createContext<CartContextValues>({
 	cartItems: [],
 	setCartItems: () => {},
+	clearStorage: () => {},
 });
 
 export const useCartContext = () => React.useContext(CartContext);
 
 const CartContextProvider = ({ children }: { children: React.ReactNode }) => {
-	const [cartItems, setCartItems] = useLocalStorage<CartItem[]>('carts', []);
+	const [cartItems, setCartItems, clearStorage] = useLocalStorage<CartItem[]>('carts', []);
 
 	const parsedCartItems = (cartItems: CartItem[]) => {
 		try {
@@ -34,6 +36,7 @@ const CartContextProvider = ({ children }: { children: React.ReactNode }) => {
 	const data = {
 		cartItems: parsedCartItems(cartItems),
 		setCartItems,
+		clearStorage,
 	};
 
 	return <CartContext.Provider value={data}>{children}</CartContext.Provider>;

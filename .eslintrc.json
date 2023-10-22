@@ -59,7 +59,7 @@
 		"prefer-const": "warn",
 		"max-len": ["error", 200],
 		"array-bracket-newline": "warn",
-		"consistent-return": "warn",
+		"consistent-return": "error",
 		"eqeqeq": "error",
 		"no-fallthrough": "off",
 		"no-unused-expressions": "warn",

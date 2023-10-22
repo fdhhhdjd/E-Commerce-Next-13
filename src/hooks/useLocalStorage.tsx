@@ -3,7 +3,7 @@
 //* LIB
 import { useEffect, useState } from 'react';
 
-const useLocalStorage = <T,>(key: string, initialValue: T): [T, (value: T | ((prop: T) => T)) => void] => {
+const useLocalStorage = <T,>(key: string, initialValue: T): [T, (value: T | ((prop: T) => T)) => void, () => void] => {
 	const [storedValue, setStoredValue] = useState<T>(initialValue);
 
 	useEffect(() => {
@@ -25,7 +25,19 @@ const useLocalStorage = <T,>(key: string, initialValue: T): [T, (value: T | ((pr
 			console.error(error);
 		}
 	};
-	return [storedValue, setValue];
+
+	const clearStorage = () => {
+		try {
+			setStoredValue(initialValue);
+			if (typeof window !== 'undefined') {
+				window.localStorage.removeItem(key);
+			}
+		} catch (error) {
+			console.error(error);
+		}
+	};
+
+	return [storedValue, setValue, clearStorage];
 };
 
 export default useLocalStorage;

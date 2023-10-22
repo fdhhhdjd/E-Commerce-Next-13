@@ -6,6 +6,7 @@ export const cartItemSchema = z.object({
 	name: z.string(),
 	image: z.string(),
 	size: z.string(),
+	price: z.number(),
 });
 
 export const cartsSchema = z.array(cartItemSchema);
