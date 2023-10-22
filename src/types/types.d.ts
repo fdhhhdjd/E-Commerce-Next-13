@@ -23,7 +23,7 @@ export interface FullProduct {
 
 export interface FullProductClient {
 	id: string;
-	sizes: string[];
+	sizes: number[];
 	createdAt: string;
 	categoryId: string;
 	updatedAt?: string | null;

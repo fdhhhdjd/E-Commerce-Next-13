@@ -1,11 +1,14 @@
 'use client';
 
+//* LIB
 import { useState } from 'react';
 import { toast } from 'react-hot-toast';
 import { IoIosAddCircle } from 'react-icons/io';
 
+//* IMPORT
 import Button from './buttons/Button';
 import cn from '../helpers/cn';
+import { convertArrayStrings } from '../helpers/strings';
 import { useCartContext } from '../providers/CartContextProvider';
 
 import { FullProductClient } from '@/src/types/types';
@@ -53,12 +56,14 @@ const ProductCart = ({ product }: ProductCartProps) => {
 			<div className="flex flex-row flex-wrap gap-1 pt-2 pb-5">
 				{DEFAULT_SIZES.map((currSize, idx) => (
 					<div
-						onClick={() => (!isSoldOut || sizes.includes(currSize)) && setSize(currSize)}
+						onClick={() =>
+							(!isSoldOut || convertArrayStrings(sizes).includes(currSize)) && setSize(currSize)
+						}
 						key={id + idx}
 						className={cn(
 							'cursor-pointer border border-zinc-300 hover:border-zinc-800 hover:text-zinc-800 p-2 ease-in duration-75',
 							size === currSize && 'bg-zinc-700 text-white hover:text-white',
-							(isSoldOut || !sizes.includes(currSize)) &&
+							(isSoldOut || !convertArrayStrings(sizes).includes(currSize)) &&
 								'cursor-not-allowed bg-zinc-300 text-zinc-500 hover:border-zinc-300 hover:text-zinc-500'
 						)}
 					>

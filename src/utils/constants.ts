@@ -4,6 +4,8 @@ export const ITEMS_PER_PAGE = 8;
 export const LIMIT_ORDERS_PER_USER = 8;
 
 export const DEFAULT_SIZES = [
+	'2',
+	'2.5',
 	'3.5',
 	'4',
 	'4.5',
