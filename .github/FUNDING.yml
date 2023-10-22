@@ -3,7 +3,7 @@ github:
     - fdhhhdjd
       # Up to 4 GitHub Sponsors-enabled usernames, e.g., [user1, user2]
 patreon:
-    user?u=65668237
+    patreon.com/user?u=65668237
     # A single Patreon username with user ID, e.g., user?u=65668237
 open_collective:
     # A single Open Collective username
@@ -20,6 +20,4 @@ issuehunt:
     # A single IssueHunt username
 otechie:
     # A single Otechie username
-custom:
-    - icon: https://res.cloudinary.com/ecommerce2021/image/upload/v1663398918/profile-forme/avatar_ws0jhh.png
-    - link: https://profile-forme.com
+custom: https://profile-forme.com
