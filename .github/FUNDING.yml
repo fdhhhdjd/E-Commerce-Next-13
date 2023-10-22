@@ -21,6 +21,5 @@ issuehunt:
 otechie:
     # A single Otechie username
 custom:
-    - "<img src='/images/icon.png' alt='Icon' style='width: 20px; height: 20px;'> https://profile-forme.com"
-
-      # Up to 4 custom sponsorship URLs, e.g., ['https://profile-forme.com']
+    - icon: https://res.cloudinary.com/ecommerce2021/image/upload/v1663398918/profile-forme/avatar_ws0jhh.png
+      url: https://profile-forme.com
