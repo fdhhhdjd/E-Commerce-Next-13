@@ -7,6 +7,7 @@ import { Toaster } from 'react-hot-toast';
 import Head from './head';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
+import CartContextProvider from '../providers/CartContextProvider';
 import { QueryClientContextProvider } from '../providers/QueryProvider';
 import UserContextProvider from '../providers/UserProvider';
 import '../styles/globals.css';
@@ -25,10 +26,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 			<body suppressHydrationWarning={true} className="bg-gray-100">
 				<UserContextProvider user={''} isAdmin={false}>
 					<QueryClientContextProvider>
-						<Header />
-						{children}
-						<Toaster position="top-center" />
-						<Footer />
+						<CartContextProvider>
+							<>
+								<Header />
+								{children}
+								<Toaster position="top-center" />
+								<Footer />
+							</>
+						</CartContextProvider>
 					</QueryClientContextProvider>
 				</UserContextProvider>
 			</body>

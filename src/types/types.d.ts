@@ -1,6 +1,9 @@
 //* LIB
 import { User } from 'next-auth';
 
+//* IMPORT
+import { cartItemSchema } from '../helpers/validations/cartItemSchema';
+
 export type UserSession =
 	| (User & {
 			id: string;
@@ -31,3 +34,5 @@ export interface FullProductClient {
 	description: string;
 	quantity: number;
 }
+
+export type CartItem = z.infer<typeof cartItemSchema>;
