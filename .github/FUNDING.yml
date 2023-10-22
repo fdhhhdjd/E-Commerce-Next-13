@@ -20,6 +20,4 @@ issuehunt:
     # A single IssueHunt username
 otechie:
     # A single Otechie username
-custom:
-    - icon: 'https://www.profile-forme.com/logo1.png'
-    - link: https://profile-forme.com
+custom: https://profile-forme.com
