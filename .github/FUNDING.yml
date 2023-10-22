@@ -14,8 +14,8 @@ tidelift:
     # A single Tidelift platform-name/package-name, e.g., npm/babel
 community_bridge:
     # A single Community Bridge project-name, e.g., cloud-foundry
-liberapay:
-    # A single Liberapay username
+liberapay: nguyentientai
+
 issuehunt:
     # A single IssueHunt username
 otechie:
