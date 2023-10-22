@@ -22,4 +22,4 @@ otechie:
     # A single Otechie username
 custom:
     - icon: https://res.cloudinary.com/ecommerce2021/image/upload/v1663398918/profile-forme/avatar_ws0jhh.png
-      url: https://profile-forme.com
+    - link: https://profile-forme.com
