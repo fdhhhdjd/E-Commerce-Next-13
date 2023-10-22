@@ -25,11 +25,9 @@ const ProductComponent = () => {
 		refetchOnWindowFocus: false,
 	});
 
-	if (isLoading) {
-		return <Loader />;
-	}
+	if (isLoading) return <Loader />;
 
-	if (isError) {
+	if (isError)
 		return (
 			<ErrorPage
 				error={{
@@ -38,7 +36,6 @@ const ProductComponent = () => {
 				reset={() => refetch()}
 			/>
 		);
-	}
 	return (
 		<>
 			<Border />

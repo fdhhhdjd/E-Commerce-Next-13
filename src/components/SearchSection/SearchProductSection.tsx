@@ -25,12 +25,9 @@ const SearchProductSection = ({ search, onClose }: SearchProductSectionProp) => 
 		refetchOnWindowFocus: false,
 	});
 
-	if (isLoading) {
-		return <Loader />;
-	}
-	if (!products || !products.length) {
-		return <NotFoundText>No Products Found.</NotFoundText>;
-	}
+	if (isLoading) return <Loader />;
+
+	if (!products || !products.length) return <NotFoundText>No Products Found.</NotFoundText>;
 
 	return (
 		<>

@@ -32,11 +32,9 @@ const ProductSuggestionSection = ({ product }: ProductSuggestionSectionProps) =>
 		refetchOnWindowFocus: false,
 	});
 
-	if (isLoading) {
-		return <Loader />;
-	}
+	if (isLoading) return <Loader />;
 
-	if (isError) {
+	if (isError)
 		return (
 			<ErrorPage
 				error={{
@@ -45,7 +43,6 @@ const ProductSuggestionSection = ({ product }: ProductSuggestionSectionProps) =>
 				reset={() => refetch()}
 			/>
 		);
-	}
 
 	return (
 		<>

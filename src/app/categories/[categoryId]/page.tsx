@@ -45,9 +45,8 @@ const CategoryIdPage = (props: PageProps) => {
 			queryClient.removeQueries(['initDetailCategories']);
 		};
 	}, [categoryId]);
-	if (isLoading) {
-		return <Loader />;
-	}
+
+	if (isLoading) return <Loader />;
 
 	if (isError) {
 		return (

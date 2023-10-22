@@ -34,13 +34,9 @@ const ProductIdPage = ({ params: { productId } }: PageProps) => {
 		};
 	}, []);
 
-	if (isLoading) {
-		return <Loader />;
-	}
+	if (isLoading) return <Loader />;
 
-	if (!product) {
-		return notFound();
-	}
+	if (!product) return notFound();
 
 	return (
 		<>

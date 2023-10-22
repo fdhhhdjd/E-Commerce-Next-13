@@ -11,7 +11,6 @@ const useLocalStorage = <T,>(key: string, initialValue: T): [T, (value: T | ((pr
 		if (item) {
 			setStoredValue(JSON.parse(item) as T);
 		}
-		// eslint-disable-next-line
 	}, []);
 
 	const setValue = (value: T | ((prop: T) => T)) => {

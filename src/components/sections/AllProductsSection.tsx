@@ -29,11 +29,9 @@ const AllProductsSection = ({ page }: Props) => {
 		refetchOnWindowFocus: false,
 	});
 
-	if (isLoading) {
-		return <Loader />;
-	}
+	if (isLoading) return <Loader />;
 
-	if (isError) {
+	if (isError)
 		return (
 			<ErrorPage
 				error={{
@@ -42,8 +40,6 @@ const AllProductsSection = ({ page }: Props) => {
 				reset={() => refetch()}
 			/>
 		);
-	}
-
 	return (
 		<div className="sm:mx-3 px-2 sm:py-10 py-5">
 			<h2 className="mx-auto max-w-6xl text-2xl font-black mb-4">All Available Products:</h2>
