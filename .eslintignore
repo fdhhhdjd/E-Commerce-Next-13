@@ -1,7 +1,7 @@
 node_modules/
 public/
 build/
-
+.github/
 *.css
 *.svg
 *.config.js
