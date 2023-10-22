@@ -1,3 +1,4 @@
+//* IMPORT
 import CategorySection from '@/src/components/CategorySection';
 import Hero from '@/src/components/heros/Hero';
 import ProductComponent from '@/src/components/sections/PopularProductsSection';

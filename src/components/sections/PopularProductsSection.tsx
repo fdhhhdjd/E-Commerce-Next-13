@@ -1,7 +1,9 @@
 'use client';
 
+//* LIB
 import { useQuery } from '@tanstack/react-query';
 
+//* IMPORT
 import Border from '../Border';
 import SeeAllButton from '../buttons/SeeAllButton';
 import Loader from '../loaders/Loader';

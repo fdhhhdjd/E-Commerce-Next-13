@@ -1,7 +1,9 @@
+///* LIB
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { Toaster } from 'react-hot-toast';
 
+///* IMPORT
 import Head from './head';
 import Footer from '../components/Footer';
 import Header from '../components/Header';

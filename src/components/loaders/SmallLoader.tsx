@@ -1,5 +1,6 @@
 'use client';
 
+//* LIB
 import { RotatingLines } from 'react-loader-spinner';
 
 const SmallLoader = () => {

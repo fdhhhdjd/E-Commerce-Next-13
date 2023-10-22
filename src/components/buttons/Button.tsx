@@ -1,9 +1,11 @@
 'use client';
 
+//* LIB
 import React, { useState } from 'react';
 import { FiLoader } from 'react-icons/fi';
 
-import cn from '../../helpers/cn';
+//* IMPORT
+import cn from '@/src/helpers/cn';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 	onClick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;

@@ -1,7 +1,11 @@
+//* LIB
 import Image from 'next/image';
 
+//* IMPORT
 import { displayNumbers } from '../../helpers/numbers';
 import { FullProductClient } from '../../types/types';
+
+import ProductCart from '@/src/components/ProductCart';
 
 interface ProductSectionProps {
 	product: FullProductClient;
@@ -20,7 +24,7 @@ const ProductSection = ({ product }: ProductSectionProps) => {
 				<div className="lg:flex-[1] lg:mt-0 mt-10">
 					<h2 className="md:text-3xl text-2xl font-black">{name}</h2>
 					<h3 className="text-xl font-black pt-5 text-red-800">${displayNumbers(price)}</h3>
-					{/* <ProductCart product={product} />e */}
+					<ProductCart product={product} />
 				</div>
 			</div>
 			<div className="pt-5 border-t border-zinc-300">

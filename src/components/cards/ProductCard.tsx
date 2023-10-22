@@ -1,12 +1,13 @@
 'use client';
 
+//* LIB
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 
-import { FullProductClient } from '../../types/types';
-
+//* IMPORT
 import { displayNumbers } from '@/src/helpers/numbers';
 import { generateRandomNumber } from '@/src/helpers/randoms';
+import { FullProductClient } from '@/src/types/types';
 
 const ProductCard = ({
 	id,

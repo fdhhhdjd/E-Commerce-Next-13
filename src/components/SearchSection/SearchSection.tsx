@@ -1,11 +1,12 @@
 'use client';
 
+//* LIB
 import { Dialog, DialogBody } from '@material-tailwind/react';
 import { debounce } from 'lodash';
 import React, { useCallback, useState } from 'react';
 import { AiOutlineClose, AiOutlineSearch } from 'react-icons/ai';
 
-// import SearchProductSection from "./SearchProductSection";
+//* IMPORT
 import SearchProductSection from './SearchProductSection';
 import { LIMIT_SEARCH_INPUT } from '../../utils/constants';
 import Button from '../buttons/Button';
@@ -22,7 +23,6 @@ const SearchSection = () => {
 		debounce((val: string) => {
 			setSearch(val);
 		}, 500),
-		// eslint-disable-next-line
 		[]
 	);
 

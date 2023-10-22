@@ -1,8 +1,10 @@
 'use client';
 
+//* LIB
 import { useRouter } from 'next/navigation';
 import React from 'react';
 
+//* IMPORT
 import cn from '../helpers/cn';
 
 interface TitleClickProps extends React.HTMLAttributes<HTMLDivElement> {

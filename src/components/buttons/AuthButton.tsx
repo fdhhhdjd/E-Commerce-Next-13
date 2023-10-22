@@ -1,8 +1,11 @@
 'use client';
 
+//* IMPORT
 import { SignInButton } from './SignInButton';
-import { useUserContext } from '../../providers/UserProvider';
 import UserMenu from '../menus/UserMenu';
+
+import { useUserContext } from '@/src/providers/UserProvider';
+
 const AuthButton = () => {
 	const { user, isAdmin } = useUserContext();
 

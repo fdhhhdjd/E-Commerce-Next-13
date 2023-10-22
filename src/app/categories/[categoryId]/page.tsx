@@ -1,11 +1,12 @@
 'use client';
 
+//* LIB
 import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { useEffect } from 'react';
 
-import ErrorPage from '../../error';
-
+//* IMPORT
 import { fetchDetailCategory } from '@/src/api/categories/GET';
+import ErrorPage from '@/src/app/error';
 import Border from '@/src/components/Border';
 import BackButton from '@/src/components/buttons/BackButton';
 import CategoryHero from '@/src/components/heros/CategoryHero';

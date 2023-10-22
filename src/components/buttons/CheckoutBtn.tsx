@@ -1,11 +1,14 @@
 /* eslint-disable max-len */
 
+//* LIB
 import { Menu, MenuHandler, MenuList } from '@material-tailwind/react';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 
+//* IMPORT
 import SeeAllButton from './SeeAllButton';
 
 import cn from '@/src/helpers/cn';
+
 const CheckoutBtn = () => {
 	const cartItems = [];
 	return (

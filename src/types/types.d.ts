@@ -1,3 +1,4 @@
+//* LIB
 import { User } from 'next-auth';
 
 export type UserSession =
@@ -23,4 +24,10 @@ export interface FullProductClient {
 	createdAt: string;
 	categoryId: string;
 	updatedAt?: string | null;
+	handleClickAfter?: () => void;
+	name: string;
+	image: string;
+	price: number;
+	description: string;
+	quantity: number;
 }

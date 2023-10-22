@@ -1,3 +1,4 @@
+//* LIB
 import Image from 'next/image';
 
 interface Category {

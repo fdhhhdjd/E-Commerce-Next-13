@@ -1,8 +1,10 @@
 'use client';
 
+//* LIB
 import { useQuery } from '@tanstack/react-query';
 import { useState } from 'react';
 
+//* IMPORT
 import PaginationButtons from '../buttons/PaginationButtons';
 import Loader from '../loaders/Loader';
 import NotFoundText from '../NotFoundText';

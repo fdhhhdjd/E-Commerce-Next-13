@@ -1,5 +1,5 @@
-import BackButton from '../../components/buttons/BackButton';
-
+//* IMPORT
+import BackButton from '@/src/components/buttons/BackButton';
 import CategorySection from '@/src/components/CategorySection';
 
 const CategoriesPage = () => {

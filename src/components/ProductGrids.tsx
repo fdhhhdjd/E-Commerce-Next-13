@@ -1,3 +1,4 @@
+//* LIB
 import ProductCard from './cards/ProductCard';
 import NotFoundText from './NotFoundText';
 import { FullProductClient } from '../types/types';

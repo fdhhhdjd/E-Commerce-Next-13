@@ -1,7 +1,9 @@
+/** LIB  **/
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/** CSS  **/
 body {
 	color: #27272a;
 }
