@@ -9,6 +9,10 @@ import Button from '../components/buttons/Button';
 const NotFoundPage = () => {
 	const router = useRouter();
 
+	const qq11 = 'hello';
+
+	if (!qq11) console.info(123);
+
 	return (
 		<div className="h-[60vh] py-20 flex flex-col items-center">
 			<h2 className="font-black text-4xl text-red-800 mb-4">404 Not Found</h2>
