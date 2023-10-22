@@ -4,7 +4,7 @@
 import React, { createContext, useContext, useState } from 'react';
 
 //* IMPORT
-import { UserSession } from '../types/types';
+import { UserSession } from '@/src/types/types';
 
 interface UserContextValues {
 	user: UserSession;
@@ -28,17 +28,12 @@ interface UserContextProviderProps {
 const UserContextProvider = ({ children, user, isAdmin }: UserContextProviderProps) => {
 	const [userSession, setUserSession] = useState<UserSession>(user);
 
-	return (
-		<UserContext.Provider
-			value={{
-				user: userSession,
-				setUser: setUserSession,
-				isAdmin,
-			}}
-		>
-			{children}
-		</UserContext.Provider>
-	);
+	const data = {
+		user: userSession,
+		setUser: setUserSession,
+		isAdmin,
+	};
+	return <UserContext.Provider value={data}>{children}</UserContext.Provider>;
 };
 
 export default UserContextProvider;

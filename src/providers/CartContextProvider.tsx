@@ -31,16 +31,12 @@ const CartContextProvider = ({ children }: { children: React.ReactNode }) => {
 		}
 	};
 
-	return (
-		<CartContext.Provider
-			value={{
-				cartItems: parsedCartItems(cartItems),
-				setCartItems,
-			}}
-		>
-			{children}
-		</CartContext.Provider>
-	);
+	const data = {
+		cartItems: parsedCartItems(cartItems),
+		setCartItems,
+	};
+
+	return <CartContext.Provider value={data}>{children}</CartContext.Provider>;
 };
 
 export default CartContextProvider;

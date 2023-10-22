@@ -2,15 +2,41 @@
 
 //* LIB
 import { Menu, MenuHandler, MenuList } from '@material-tailwind/react';
+import Image from 'next/image';
+import { usePathname, useRouter } from 'next/navigation';
+import { useState } from 'react';
+import toast from 'react-hot-toast';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 
 //* IMPORT
+import Button from './Button';
 import SeeAllButton from './SeeAllButton';
+import ToHide from '../ToHide';
 
 import cn from '@/src/helpers/cn';
+import { useCartContext } from '@/src/providers/CartContextProvider';
 
 const CheckoutBtn = () => {
-	const cartItems = [];
+	const router = useRouter();
+	const path = usePathname();
+
+	const [isLoading, setIsLoading] = useState(false);
+
+	const { cartItems, setCartItems } = useCartContext();
+
+	const toHide = path && (['/carts', '/orders/status'].includes(path) || path.startsWith('/checkout'));
+
+	const handleRemove = (idx: number) => {
+		if (idx < 0 || idx >= cartItems.length) return;
+		setIsLoading(true);
+		setCartItems([...cartItems.filter((_, index) => index !== idx)]);
+		setTimeout(() => {
+			setIsLoading(false);
+			toast.success('Item successfully removed!');
+		}, 200);
+	};
+	if (toHide) return <ToHide />;
+
 	return (
 		<Menu placement="bottom-end">
 			<MenuHandler>
@@ -40,6 +66,44 @@ const CheckoutBtn = () => {
 						<p className="text-[14px] text-center">Cart is empty.</p>
 					</div>
 				)}
+
+				{cartItems.map((item, idx) => (
+					<div
+						key={`cartItem__${item.id}__${idx}`}
+						className="grid grid-cols-5 gap-2 border-b border-zinc-300 pb-3 mb-2 last:border-0 last:pb-0 last:mb-0"
+					>
+						<div className="col-span-2">
+							<Image
+								src={item.image}
+								alt={item.id + idx}
+								width={200}
+								height={200}
+								className="w-auto h-auto"
+							/>
+						</div>
+						<div className="col-span-3 flex flex-col justify-between p-1">
+							<div>
+								<p
+									onClick={() => router.push(`/products/${item.id}`)}
+									className="text-[14px] hover:underline hover:text-red-800 ease-in duration-75 cursor-pointer"
+								>
+									{item.name}
+								</p>
+								<p className="text-[14px] font-medium">US M{item.size}</p>
+							</div>
+							<div className="flex justify-end">
+								<Button
+									onClick={() => handleRemove(idx)}
+									isLoading={isLoading}
+									color="red"
+									className="py-2 px-6"
+								>
+									Remove
+								</Button>
+							</div>
+						</div>
+					</div>
+				))}
 			</MenuList>
 		</Menu>
 	);

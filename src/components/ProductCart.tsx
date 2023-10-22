@@ -6,6 +6,7 @@ import { IoIosAddCircle } from 'react-icons/io';
 
 import Button from './buttons/Button';
 import cn from '../helpers/cn';
+import { useCartContext } from '../providers/CartContextProvider';
 
 import { FullProductClient } from '@/src/types/types';
 import { DEFAULT_SIZES, LIMIT_CART_SIZE } from '@/src/utils/constants';
@@ -14,20 +15,12 @@ interface ProductCartProps {
 	product: FullProductClient;
 }
 
-interface CartItem {
-	id: string;
-	name: string;
-	image: string;
-	size: string;
-}
 const ProductCart = ({ product }: ProductCartProps) => {
 	const { id, name, image, sizes, quantity } = product;
 
-	const [cartItems, setCartItems] = useState<CartItem[]>([]);
-
 	const [size, setSize] = useState<string | undefined>();
 
-	// const { cartItems, setCartItems } = useCartContext();
+	const { cartItems, setCartItems } = useCartContext();
 	const [isLoading, setIsLoading] = useState(false);
 
 	const isSoldOut = quantity === 0;
