@@ -1,9 +1,11 @@
 'use client';
 
+//* LIB
 import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { notFound } from 'next/navigation';
 import { useEffect } from 'react';
 
+//* IMPORT
 import Border from '../../../components/Border';
 import BackButton from '../../../components/buttons/BackButton';
 

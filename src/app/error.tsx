@@ -1,6 +1,8 @@
 'use client';
+//* LIB
 import React, { useEffect } from 'react';
 
+//* IMPORT
 import Button from '@/src/components/buttons/Button';
 
 interface CustomError {
