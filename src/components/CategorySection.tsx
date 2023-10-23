@@ -18,12 +18,13 @@ const CategorySection = ({
 	displayTotal?: boolean;
 }) => {
 	const {
-		data: categories,
 		isLoading,
 		isError,
+		data: categories,
 		refetch,
-	} = useQuery(['initCategories'], () => fetchAllCategory(), {
-		onError: (err) => console.info(err),
+	} = useQuery({
+		queryKey: ['initCategories'],
+		queryFn: () => fetchAllCategory(),
 		refetchOnWindowFocus: false,
 	});
 

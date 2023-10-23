@@ -22,13 +22,15 @@ const ProductSuggestionSection = ({ product }: ProductSuggestionSectionProps) =>
 		isLoading,
 		isError,
 		refetch,
-	} = useQuery(['initProducts'], () => fetchAllProducts(skipProductId), {
-		onError: (err) => console.info(err),
+	} = useQuery({
+		queryKey: ['initProducts'],
+		queryFn: () => fetchAllProducts(skipProductId),
 		refetchOnWindowFocus: false,
 	});
 
-	const { data: category } = useQuery(['initDetailCategory'], () => fetchDetailCategory(categoryId), {
-		onError: (err) => console.info(err),
+	const { data: category } = useQuery({
+		queryKey: ['initDetailCategory'],
+		queryFn: () => fetchDetailCategory(categoryId),
 		refetchOnWindowFocus: false,
 	});
 

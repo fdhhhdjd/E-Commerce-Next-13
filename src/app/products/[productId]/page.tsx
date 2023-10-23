@@ -23,14 +23,15 @@ interface PageProps {
 const ProductIdPage = ({ params: { productId } }: PageProps) => {
 	const queryClient = useQueryClient();
 
-	const { data: product, isLoading } = useQuery(['detailProducts'], () => fetchDetailProducts(productId), {
-		onError: (err) => console.info(err),
+	const { isLoading, data: product } = useQuery({
+		queryKey: ['detailProducts'],
+		queryFn: () => fetchDetailProducts(productId),
 		refetchOnWindowFocus: false,
 	});
 
 	useEffect(() => {
 		return () => {
-			queryClient.removeQueries(['detailProducts', 'initDetailCategory']);
+			queryClient.removeQueries({ queryKey: ['detailProducts', 'initDetailCategory'] });
 		};
 	}, []);
 

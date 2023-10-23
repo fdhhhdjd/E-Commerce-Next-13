@@ -31,18 +31,21 @@ const CategoryIdPage = (props: PageProps) => {
 	const queryClient = useQueryClient();
 
 	const {
-		data: category,
 		isLoading,
 		isError,
+		data: category,
 		refetch,
-	} = useQuery(['initDetailCategories'], () => fetchDetailCategory(categoryId), {
-		onError: (err) => console.info(err),
+	} = useQuery({
+		queryKey: ['initDetailCategories'],
+		queryFn: () => fetchDetailCategory(categoryId),
 		refetchOnWindowFocus: false,
 	});
 
 	useEffect(() => {
 		return () => {
-			queryClient.removeQueries(['initDetailCategories']);
+			queryClient.removeQueries({
+				queryKey: ['initDetailCategories'],
+			});
 		};
 	}, [categoryId]);
 

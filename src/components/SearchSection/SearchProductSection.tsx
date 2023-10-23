@@ -20,8 +20,9 @@ interface SearchProductSectionProp {
 const SearchProductSection = ({ search, onClose }: SearchProductSectionProp) => {
 	const [page, setPage] = useState(1);
 
-	const { data: products, isLoading } = useQuery(['initProducts', search], () => fetchProducts(search), {
-		onError: (err) => console.info(err),
+	const { isLoading, data: products } = useQuery({
+		queryKey: ['initProducts', search],
+		queryFn: () => fetchProducts(search),
 		refetchOnWindowFocus: false,
 	});
 

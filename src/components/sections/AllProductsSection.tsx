@@ -24,8 +24,9 @@ const AllProductsSection = ({ page }: Props) => {
 		isLoading,
 		isError,
 		refetch,
-	} = useQuery(['initProducts'], () => fetchAllProducts(skip), {
-		onError: (err) => console.info(err),
+	} = useQuery({
+		queryKey: ['initProducts'],
+		queryFn: () => fetchAllProducts(skip),
 		refetchOnWindowFocus: false,
 	});
 

@@ -16,12 +16,13 @@ const ProductComponent = () => {
 	const skip = 1;
 
 	const {
-		data: products,
 		isLoading,
 		isError,
+		data: products,
 		refetch,
-	} = useQuery(['initProducts'], () => fetchAllProducts(skip), {
-		onError: (err) => console.info(err),
+	} = useQuery({
+		queryKey: ['initProducts'],
+		queryFn: () => fetchAllProducts(skip),
 		refetchOnWindowFocus: false,
 	});
 

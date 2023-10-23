@@ -11,8 +11,8 @@ const QueryClientContextProvider = (props: { children: React.ReactNode }) => {
 	return (
 		<>
 			<QueryClientProvider client={queryClient}>
-				<ReactQueryDevtools initialIsOpen={false} />
 				{props.children}
+				<ReactQueryDevtools initialIsOpen={false} />
 			</QueryClientProvider>
 		</>
 	);
