@@ -20,11 +20,20 @@
 		"sourceType": "module",
 		"project": "./tsconfig.json"
 	},
-	"plugins": ["react", "prettier", "react-hooks", "import", "detox", "@typescript-eslint", "prefer-arrow"],
+	"plugins": [
+		"react",
+		"prettier",
+		"react-hooks",
+		"import",
+		"detox",
+		"@typescript-eslint",
+		"prefer-arrow",
+		"check-file"
+	],
 	"rules": {
 		"react/react-in-jsx-scope": "off",
 		"react/jsx-filename-extension": [
-			"warn",
+			"error",
 			{
 				"extensions": [".ts", ".tsx"]
 			}
@@ -129,6 +138,36 @@
 			{
 				"selector": "typeAlias",
 				"format": ["PascalCase"]
+			}
+		],
+
+		"check-file/no-index": "error",
+		"check-file/filename-blocklist": [
+			"error",
+			{
+				"**/*.model.ts": "*.models.ts",
+				"**/*.util.ts": "*.utils.ts",
+				"**/*.helper.ts": "*.helpers.ts"
+			}
+		],
+		"check-file/filename-naming-convention": [
+			"error",
+			{
+				"src/app/**/*.{tsx}": "SNAKE_CASE",
+				"src/app/*.{tsx}": "SNAKE_CASE",
+				"src/helpers/**/*.{ts}": "SNAKE_CASE",
+				"src/components/**/*.{tsx}": "PASCAL_CASE",
+				"src/components/*.{tsx}": "PASCAL_CASE"
+			}
+		],
+		"check-file/folder-naming-convention": [
+			"error",
+			{
+				"src/api/**/": "SNAKE_CASE",
+				"src/helpers/**/": "SNAKE_CASE",
+				"src/hooks/**/": "SNAKE_CASE",
+				"src/app/**/": "([a-z]+)|(\\(\\w+\\))|(\\[[a-zA-Z]+\\])",
+				"mocks/*/": "KEBAB_CASE"
 			}
 		]
 	},

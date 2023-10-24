@@ -2,5 +2,9 @@
 	"typescript.tsdk": "node_modules/typescript/lib",
 	"typescript.enablePromptUseWorkspaceTsdk": true,
 	"editor.formatOnSave": true,
-	"editor.defaultFormatter": "esbenp.prettier-vscode"
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"files.exclude": {
+		"**/node_modules": true,
+		"**/dist": true
+	}
 }
