@@ -1,0 +1,18 @@
+name: Trigger Product Quantity Update on CRON Schedule
+
+on:
+  schedule:
+   - cron: "0 12 * * *"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Product Quantity Update
+      run: |
+        curl -X GET \
+        -H 'Content-type: application/json' \
+        -H 'x-api-key: ${{ secrets.CRON_API_KEY }}' \
+        --url ${{ secrets.CRON_URL }}
