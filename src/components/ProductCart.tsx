@@ -60,6 +60,12 @@ const ProductCart = ({ product }: ProductCartProps) => {
 						onClick={() =>
 							(!isSoldOut || convertArrayStrings(sizes).includes(currSize)) && setSize(currSize)
 						}
+						onKeyDown={(e) => {
+							if (e.key === 'Enter') {
+								(!isSoldOut || convertArrayStrings(sizes).includes(currSize)) && setSize(currSize);
+							}
+						}}
+						tabIndex={0}
 						key={id + idx}
 						className={cn(
 							'cursor-pointer border border-zinc-300 hover:border-zinc-800 hover:text-zinc-800 p-2 ease-in duration-75',

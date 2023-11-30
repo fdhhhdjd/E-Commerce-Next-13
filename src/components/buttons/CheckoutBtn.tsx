@@ -97,6 +97,12 @@ const CheckoutBtn = () => {
 							<div>
 								<p
 									onClick={() => router.push(`/products/${item.id}`)}
+									onKeyDown={(e) => {
+										if (e.key === 'Enter') {
+											router.push(`/products/${item.id}`);
+										}
+									}}
+									tabIndex={0}
 									className="text-[14px] hover:underline hover:text-red-800 ease-in duration-75 cursor-pointer"
 								>
 									{item.name}

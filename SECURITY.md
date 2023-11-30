@@ -1,12 +1,15 @@
 ## 1. Vietnamese
+
 # Bảo mật của dự án
-- Hãy cam kết với Tài để bảo mật dự án dù có rời nhóm.
+
+-   Hãy cam kết với Tài để bảo mật dự án dù có rời nhóm.
+
 ## Báo cáo lỗ hổng bảo mật
 
 Nếu bạn phát hiện bất kỳ lỗ hổng bảo mật nào trong dự án, vui lòng gửi báo cáo về cho chúng tôi. Chúng tôi đánh giá cao sự đóng góp của bạn và sẽ làm việc cùng bạn để giải quyết vấn đề một cách an toàn và nhanh chóng. Vui lòng liên hệ với chúng tôi theo các phương thức sau:
 
-- Email: nguyentientai10@gmail.com
-- Cá nhân: https://profile-forme.cf
+-   Email: nguyentientai10@gmail.com
+-   Cá nhân: https://profile-forme.com
 
 Vui lòng không tiết lộ thông tin về lỗ hổng bảo mật cho bất kỳ ai khác trước khi chúng tôi có cơ hội khắc phục vấn đề.
 
@@ -27,15 +30,18 @@ Chúng tôi cam kết cung cấp các bản vá bảo mật (security patches) v
 
 Bản quyền © [2023] [Web Blog Developer], cảm ơn bạn !
 
-## 2. English 
+## 2. English
+
 # Security of the project
-- Make a commitment to Tai to keep the project secure even if you leave the group.
+
+-   Make a commitment to Tai to keep the project secure even if you leave the group.
+
 ## Report a security hole
 
 If you find any security holes in the project, please report them to us. We appreciate your input and will work with you to resolve the issue safely and quickly. Please contact us by the following methods:
 
-- Email: nguyentientai10@gmail.com
-- Personal: https://profile-forme.cf
+-   Email: nguyentientai10@gmail.com
+-   Personal: https://profile-forme.com
 
 Please do not disclose the vulnerability information to anyone else before we have had a chance to fix the issue.
 

@@ -44,6 +44,12 @@ const CartCard = ({ item, index, disableAction = false }: Props) => {
 			<div className="sm:col-span-3 col-span-2">
 				<p
 					onClick={() => !disableAction && router.push(`/products/${item.id}`)}
+					onKeyDown={(e) => {
+						if (!disableAction && e.key === 'Enter') {
+							router.push(`/products/${item.id}`);
+						}
+					}}
+					tabIndex={!disableAction ? 0 : undefined}
 					className={cn(
 						'sm:text-lg text-[16px] font-black ease-in duration-75',
 						!disableAction && 'hover:underline hover:text-red-800 cursor-pointer'
