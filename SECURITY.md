@@ -28,7 +28,7 @@ Chúng tôi cam kết cung cấp các bản vá bảo mật (security patches) v
 
 ## Bản quyền
 
-Bản quyền © [2023] [Web Blog Developer], cảm ơn bạn !
+Bản quyền © [2023] [Developer], cảm ơn bạn !
 
 ## 2. English
 
@@ -60,4 +60,4 @@ We are committed to providing security patches and updates to the project when v
 
 ## License
 
-Copyright © [2023] [Web Blog Developer], thank you!
+Copyright © [2023] [Developer], thank you!
